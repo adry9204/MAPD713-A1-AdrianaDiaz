@@ -1,0 +1,28 @@
+{
+  "name": "mapd713-a1-adrianadiaz",
+  "version": "1.0.0",
+  "description": "\"Simple Product Web Service\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adry9204/product_web_service.git"
+  },
+  "author": "Adriana Diaz",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "debug": "^2.2.0",
+    "express": "^4.13.3",
+    "seneca": "2.0.0",
+    "seneca-entity": "^1.3.0",
+    "seneca-mongo-store": "^0.2.0",
+    "type-is": "^1.6.10"
+  },
+  "bugs": {
+    "url": "https://github.com/adry9204/product_web_service/issues"
+  },
+  "homepage": "https://github.com/adry9204/product_web_service#readme"
+}

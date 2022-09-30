@@ -46,11 +46,12 @@ var productsService = function (options) {
   seneca.add({ role: "product", cmd: "delete-all" }, function (msg, respond) {
     console.log("> delete-all-products DELETE: sending response");
 
-    /*
-    this.make("product").list$({}, function (msg, list) {
-      list.forEach(console.log("AAAAAAA"));
+    this.make("product").list$({}, function (err, list) {
+      for (let i = 0; i < list.length; i++) {
+        this.make("product").remove$(list[i].id, null);
+      }
+      respond(err, []);
     });
-    */
 
     deleteCount += 1;
     console.log(

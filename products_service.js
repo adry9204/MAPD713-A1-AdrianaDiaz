@@ -8,7 +8,8 @@ var productsService = function (options) {
   seneca.add({ role: "product", cmd: "add" }, function (msg, respond) {
     console.log("> add product POST: sending response");
     this.make("product").data$(msg.data).save$(respond);
-    postCount = postCount + 1;
+
+    postCount += 1;
     console.log(
       `Processed Request Count --> Get: ${getCount} Post: ${postCount} Delete: ${deleteCount}`
     );
@@ -35,6 +36,7 @@ var productsService = function (options) {
   seneca.add({ role: "product", cmd: "delete" }, function (msg, respond) {
     console.log("> delete-product by ID DELETE: sending response");
     this.make("product").remove$(msg.data.product_id, respond);
+
     deleteCount += 1;
     console.log(
       `Processed Request Count --> Get: ${getCount} Post: ${postCount} Delete: ${deleteCount}`
@@ -43,7 +45,13 @@ var productsService = function (options) {
 
   seneca.add({ role: "product", cmd: "delete-all" }, function (msg, respond) {
     console.log("> delete-all-products DELETE: sending response");
-    this.make("product").remove$("*", respond);
+
+    /*
+    this.make("product").list$({}, function (msg, list) {
+      list.forEach(console.log("AAAAAAA"));
+    });
+    */
+
     deleteCount += 1;
     console.log(
       `Processed Request Count --> Get: ${getCount} Post: ${postCount} Delete: ${deleteCount}`

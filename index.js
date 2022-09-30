@@ -61,9 +61,7 @@ seneca.add("role:api, cmd:delete-product", function (args, done) {
 });
 
 seneca.add("role:api, cmd:delete-all-products", function (args, done) {
-  console.log(
-    "> delete-all-products GET: ================================ received request"
-  );
+  console.log("> delete-all-products GET: received request");
 
   seneca.act({ role: "product", cmd: "delete-all" }, function (err, msg) {
     console.log(msg);
